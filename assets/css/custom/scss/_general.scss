@@ -1,0 +1,51 @@
+/**
+* general styles of the site
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  line-height: 1.25;
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 100%;
+  color: $pageLightBgTxtColor;
+  background-color: $pageLightBg;
+  scroll-behavior: smooth;
+}
+
+header, nav, main, article, section, aside, footer {
+  display: block;
+}
+
+a {
+  color: $pageLightBgLinkColor;
+  text-decoration: none;
+  background-color: transparent;
+  &:not([href]):not([tabindex]), 
+  &:not([href]):not([tabindex]):hover,
+  &:not([href]):not([tabindex]):focus {
+    color: inherit;
+    text-decoration: none;
+  }
+  &:not([href]):not([tabindex]):focus {
+    outline: 0;
+  }
+  &:hover, 
+  &:focus {
+    color: $pageLightBgLinkColorHvr;
+    text-decoration: none;
+    background-color: transparent;
+  }
+}
+

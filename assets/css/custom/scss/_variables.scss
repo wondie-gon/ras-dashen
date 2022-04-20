@@ -1,0 +1,135 @@
+// root color variables
+$rootDark: #000000;
+$rootLight: #FFFFFF;
+$altRootDark: #070707; // rgb(7,7,7)
+$altRootLight: #F8F8F8; // rgb(248,248,248)
+
+//---------------------------------------------------------
+// major theme colors that determines color of website
+// Change these to change site colors
+//---------------------------------------------------------
+$brandFirstLight: #FEFEFE; // rgb(254,254,254) ==> for text = #773366
+$brandSecondLight: #FDFDFF; // rgb(253,253,255)
+$brandThirdLight: #F7FBFE; // rgb(247,251,254)
+
+$brandFirstDark: #4E79FB; // Blue Crayola rgb(78,121,251)
+$brandSecondDark: #3E41F4; // Blue RYB == rgb(62,65,244)
+$brandThirdDark: #190933; // Russian Violet rgb(25,9,51)
+
+//---------------------------------------------------
+// extra colors 
+// for section dividers and other graphical objects
+//---------------------------------------------------
+$graphicalObjLightClr1: #8FDEFC; // Light bue
+
+// ------------------------------------------------------------------
+// body, page and page sections light & dark colored bg vars
+// bg & hoverd bg, text, link & hovered colors
+// ------------------------------------------------------------------
+
+// default light colored bg vars
+$pageLightBg: $rootLight;
+$pageLightBgHvr: $brandFirstLight;
+$pageLightBgTxtColor: $rootDark;
+$pageLightBgLinkColor: $brandThirdDark;
+$pageLightBgLinkColorHvr: $brandFirstDark;
+
+// most light bg closer to white or $rootLight
+$mostLightBg: $brandFirstLight;
+$mostLightBgHvr: $brandSecondLight;
+$mostLightBgTxt: $altRootDark;
+$mostLightBgLink: $brandThirdDark;
+$mostLightBgLinkHvr: $brandSecondDark;
+
+// more light (mid) colored bg vars
+$moreLightBg: $brandSecondLight;
+$moreLightBgHvr: $brandFirstLight;
+$moreLightBgTxt: $altRootDark;
+$moreLightBgLink: $brandThirdDark;
+$moreLightBgLinkHvr: $brandFirstDark;
+
+// less light (low) colored bg vars farthest from white
+$lessLightBg: $brandThirdLight;
+$lessLightBgHvr: $brandSecondLight;
+$lessLightBgTxt: $rootDark;
+$lessLightBgLink: $brandThirdDark;
+$lessLightBgLinkHvr: $brandSecondDark;
+
+// less dark colored bg vars
+$lessDarkBg: $brandFirstDark;
+$lessDarkBgHvr: $brandThirdDark;
+$lessDarkBgTxt: $rootLight;
+$lessDarkBgLink: $brandSecondLight;
+$lessDarkBgLinkHvr: $brandThirdLight;
+
+// more dark colored bg vars
+$moreDarkBg: $brandSecondDark;
+$moreDarkBgHvr: $brandFirstDark;
+$moreDarkBgTxt: $rootLight;
+$moreDarkBgLink: $brandFirstLight;
+$moreDarkBgLinkHvr: $rootLight;
+
+// most dark colored bg vars
+$mostDarkBg: $brandThirdDark;
+$mostDarkBgHvr: rgba($brandThirdDark, 0.5);
+$mostDarkBgTxtColor: $rootLight;
+$mostDarkBgLinkColor: $brandSecondLight;
+$mostDarkBgLinkColorHvr: $brandFirstLight;
+
+//--------------------------------------
+// color vars for shadows
+//--------------------------------------
+$transparentShadow: rgba($rootDark, 0.1);
+$semiTransparentShadow: rgba($rootDark, 0.3);
+$semiOpaqueShadow: rgba($rootDark, 0.5);
+
+// alternative shadows for elements on dark bg block areas
+// rgb value of $lessDarkBg
+$altTransparentShadow: rgba($lessDarkBg, 0.3);
+$altSemiTransparentShadow: rgba($lessDarkBg, 0.5);
+$altSemiOpaqueShadow: rgba($lessDarkBg, 0.7);
+
+//-------------------------------------
+// Other colors, brand specific colors
+// social media icon colors
+//-------------------------------------
+// closing X color
+$redCloser: #dd252d;
+
+// social media link colors
+$fbk: #3a569f;
+
+$twtr: #2cbce6;
+
+$gplus: #e30612;
+
+$lnkdn: #006699;
+
+$pintr: #dd252d;
+
+$ytube: #e22b26;
+
+$insta: #f8477c;
+
+// default box, block excerpts, border radius etc vars
+$brdrThickness: 1px;
+$boxRadDefault: 0.5rem;
+
+// default card radius
+$defaultCardRad: $boxRadDefault;
+
+// btn related vars
+// btn radius and thickness
+$btnRadiusDef: 0.125rem;
+$btnRadiusLrg: 0.25rem;
+$btnBrdrThickness: 1px;
+
+// social media btn vars
+$btn-socmedia-width: 2rem;
+$btn-socmedia-height: 2rem;
+$btn-socmedia-icon-width: 2rem;
+$btn-socmedia-icon-line-height: 2rem;
+
+// Some transition vars
+$hovered-img-zoom-transition: all 0.3s linear !default;
+$hovered-img-zoom-transform: scale(1.03) !default;

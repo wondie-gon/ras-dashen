@@ -1,0 +1,64 @@
+// page sections titles styles
+@mixin pageSectionsTitleStyle($padding, $font_size, $font_weight, $lh, $cap) {
+    padding: $padding;
+    font-size: $font_size;
+    font-weight: $font_weight;
+    line-height: $lh;
+    text-transform: $cap;
+}
+
+// page sections description styles
+@mixin pageSectionsDescriptionStyle($font_size, $font_weight, $lh) {
+    font-size: $font_size;
+    font-weight: $font_weight;
+    line-height: $lh;
+}
+
+// page dividers
+@mixin pageSectionHrDivider($margTop, $margBottom, $bgClr, $brdr, $brdrTop, $hght) {
+    margin-top: $margTop;
+    margin-bottom: $margBottom;
+    background-color: $bgClr;
+    border: $brdr;
+    border-top: $brdrTop;
+    box-sizing: content-box;
+    height: $hght;
+    overflow: visible;
+}
+// excerpt blocks title style
+@mixin excerptBlockTitleStyle($font_size, $font_weight, $lh, $margBt) {
+    font-size: $font_size;
+    font-weight: $font_weight;
+    line-height: $lh;
+    margin-bottom: $margBt;
+}
+// excerpt blocks text area style
+@mixin excerptBlockStyle($font_size, $font_weight, $lh) {
+    font-size: $font_size;
+    font-weight: $font_weight;
+    line-height: $lh;
+}
+// excerpt blocks padding and margin styles
+@mixin excerptBlocksPaddingAndMargins($p_left, $p_right, $margBot) {
+    padding-left: $p_left;
+    padding-right: $p_right;
+    margin-bottom: $margBot;
+}
+// excerpt blocks paragraph text style
+@mixin excerptBlockParagraphStyle($p-vert, $p-horz, $pColor) {
+    padding: $p-vert $p-horz;
+    color: $pColor;
+}
+
+// excerpt block border, radius, bg and color styles
+@mixin excerptBoxBorderStyle($thickness, $brdrClr, $borderRad) {
+	border: $thickness solid $brdrClr;
+	-moz-border-radius: $borderRad;
+	-webkit-border-radius: $borderRad;
+	border-radius: $borderRad;
+}
+
+// card box shadows
+@mixin excerptBlockShadow($shadowClr) {
+  @include boxShadowBasic($shadowClr);
+}

@@ -1,0 +1,36 @@
+@import 'variables.scss';
+@import 'theme-colors.scss';
+
+// mixins
+@import 'mixins/flex-elements.scss';
+@import 'mixins/animations.scss';
+@import 'mixins/border-radius.scss';
+@import 'mixins/shadows.scss';
+@import 'mixins/clippaths.scss';
+@import 'mixins/images.scss';
+@import 'mixins/cards.scss';
+@import 'mixins/buttons.scss';
+@import 'mixins/bg-gradients-patterns.scss';
+@import 'mixins/block-colors.scss';
+@import 'mixins/page-blocks.scss';
+@import 'mixins/frontpage-sections.scss';
+
+
+@import 'general.scss';
+@import 'typography.scss';
+@import 'flex-classes.scss';
+@import 'header.scss';
+@import 'mega-nav.scss';
+@import 'classes.scss';
+@import 'cards.scss';
+@import 'frontpage.scss';
+@import 'main-content.scss';
+@import 'buttons.scss';
+@import 'svgs.scss';
+@import 'forms.scss';
+@import 'images.scss';
+@import 'video.scss';
+@import 'audio.scss';
+@import 'gallery.scss';
+@import 'sidebar.scss';
+@import 'footer.scss';

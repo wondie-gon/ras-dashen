@@ -1,0 +1,183 @@
+/**
+* Styles by class names
+*
+*/
+/*
+* background styles
+*/
+.bg-weaved-dots {
+  background:
+    radial-gradient(hsl(205, 100%, 69%) 4%, hsl(205, 100%, 46%) 9%, hsla(205, 100%, 48%, 0) 9%) 0 0,
+    radial-gradient(hsl(205, 100%, 69%) 4%, hsl(205, 100%, 46%) 8%, hsla(205, 100%, 48%, 0) 10%) 50px 50px,
+    radial-gradient(hsla(205, 100%, 72%, 0.8) 20%, hsla(205, 100%, 48%, 0)) 50px 0,
+    radial-gradient(hsla(205, 100%, 72%, 0.8) 20%, hsla(205, 100%, 48%, 0)) 0 50px,
+    radial-gradient(hsla(205, 100%, 48%, 1) 35%, hsla(205, 100%, 48%, 0) 60%) 50px 0,
+    radial-gradient(hsla(205, 100%, 48%, 1) 35%, hsla(205, 100%, 48%, 0) 60%) 100px 50px,
+    radial-gradient(hsla(205, 100%, 32%, 0.7), hsla(205, 100%, 48%, 0)) 0 0,
+    radial-gradient(hsla(205, 100%, 32%, 0.7), hsla(205, 100%, 48%, 0)) 50px 50px,
+    linear-gradient(45deg, hsla(205, 100%, 48%, 0) 49%, hsla(205, 100%, 0%, 1) 50%, hsla(205, 100%, 48%, 0) 70%) 0 0,
+    linear-gradient(-45deg, hsla(205, 100%, 48%, 0) 49%, hsla(205, 100%, 0%, 1) 50%, hsla(205, 100%, 48%, 0) 70%) 0 0;
+  background-color: $brandSecondDark;
+  background-size: 100px 100px;
+}
+/*
+* clipped componets
+*/
+.clipped-trapezoid {
+  width: 100%;
+  height: auto;
+  background-image: -webkit-linear-gradient(to top, $brandThirdLight, $brandThirdLight);
+  background-image: linear-gradient(to top, $brandThirdLight, $brandThirdLight);
+  -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+.clipped-leftpoint {
+  -webkit-clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+}
+.clipped-rightpoint {
+  -webkit-clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+  clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+}
+.clipped-trapezoid-floor {
+  position: absolute;
+  left: 0;
+  bottom: -50px;
+  width: 470px;
+  height: 200px;
+  z-index: 10;
+  background-image: -webkit-linear-gradient(to top, $brandThirdLight, $brandThirdLight);
+  background-image: linear-gradient(to top, $brandThirdLight, $brandThirdLight);
+  -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+
+.clipped-hexagon-border {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  background: $brandThirdLight;
+  box-sizing: border-box;
+  -webkit-clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.clipped-hexagon-border img {
+  position: absolute;
+  left: 2px;
+  bottom: 2px;
+  width: calc(100% - 14px);
+  height: calc(100% - 14px);
+  -webkit-clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.clipped-hexagon {
+  display: inline-block;
+  position: relative;
+  width: 75%;
+  height: 75%;
+  background: $brandThirdLight;
+  box-sizing: border-box;
+  -webkit-clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+.clipped-hexagon .brdr-left {
+  position: absolute;
+  right: 2%;
+  bottom: 2%;
+  width: 96%;
+  height: 96%;
+  -webkit-clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.clip-hexagon {
+  background: #dc2424;
+  background: -webkit-linear-gradient(to right, #dc2424, #4a569d);
+  background: linear-gradient(to right, #dc2424, #4a569d);
+  color:$rootLight;
+  padding: 10% 3% 5%;
+  -webkit-clip-path: polygon(0% 20%, 50% 0%, 100% 20%, 100% 50%, 100% 80%, 50% 100%, 0% 80%, 0% 50%);
+  clip-path: polygon(0% 20%, 50% 0%, 100% 20%, 100% 50%, 100% 80%, 50% 100%, 0% 80%, 0% 50%);
+}
+
+.clipped-pointed-r {
+  -webkit-clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+  clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+  -webkit-clip-path: url(#penta-pointed-right);
+  clip-path: url(#penta-pointed-right);
+}
+.clipped-arrow-r {
+  -webkit-clip-path: polygon(0 10%, 60% 10%, 60% 0%, 100% 50%, 60% 100%, 60% 90%, 0 90%);
+  clip-path: polygon(0 10%, 60% 10%, 60% 0%, 100% 50%, 60% 100%, 60% 90%, 0 90%);
+  -webkit-clip-path: url(#clip-arrow-right);
+  clip-path: url(#clip-arrow-right);
+}
+
+/**
+* border radius 
+*/
+.rounded-65 {
+  -moz-border-radius: 0.65rem;
+  -webkit-border-radius: 0.65rem;
+  border-radius: 0.65rem;
+}
+.border-circle {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+.rounded-diagonal {
+  border-radius: 1rem 6rem 1rem 6rem;
+  -webkit-border-radius: 1rem 6rem 1rem 6rem;
+  -moz-border-radius: 1rem 6rem 1rem 6rem;
+}
+
+/**
+* classes for box shadows and drop shadows with filter
+*/
+.img-shadow {
+  @include boxShadowBasic($boxShadowBeforeHvr);
+}
+.transparent-shadow {
+  @include boxShadowBasic($transparentShadow);
+}
+.semi-transparent-shadow {
+  @include boxShadowBasic($semiTransparentShadow);
+}
+.semi-opaque-shadow {
+  @include boxShadowBasic($semiOpaqueShadow);
+}
+.all-4-shadow {
+  @include boxShadowFourSides($semiTransparentShadow);
+}
+.topbot-opaque-shade {
+  @include boxShadowTopBottom($rootDark);
+}
+
+.smooth-shadow-effect {
+  -webkit-box-shadow:
+  0 2.8px 2.2px rgba($rootDark, 0.034),
+  0 6.7px 5.3px rgba($rootDark, 0.048),
+  0 12.5px 10px rgba($rootDark, 0.06),
+  0 22.3px 17.9px rgba($rootDark, 0.072),
+  0 41.8px 33.4px rgba($rootDark, 0.086),
+  0 100px 80px rgba($rootDark, 0.12);
+  -moz-box-shadow:
+  0 2.8px 2.2px rgba($rootDark, 0.034),
+  0 6.7px 5.3px rgba($rootDark, 0.048),
+  0 12.5px 10px rgba($rootDark, 0.06),
+  0 22.3px 17.9px rgba($rootDark, 0.072),
+  0 41.8px 33.4px rgba($rootDark, 0.086),
+  0 100px 80px rgba($rootDark, 0.12);
+  box-shadow:
+  0 2.8px 2.2px rgba($rootDark, 0.034),
+  0 6.7px 5.3px rgba($rootDark, 0.048),
+  0 12.5px 10px rgba($rootDark, 0.06),
+  0 22.3px 17.9px rgba($rootDark, 0.072),
+  0 41.8px 33.4px rgba($rootDark, 0.086),
+  0 100px 80px rgba($rootDark, 0.12);
+}

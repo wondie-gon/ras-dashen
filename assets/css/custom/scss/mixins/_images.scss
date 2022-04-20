@@ -1,0 +1,50 @@
+// img height and filter
+@mixin imgHeightAndFilter($imgHeight, $shadowColor) {
+	height: $imgHeight;
+    filter: drop-shadow(3px 4px 5px $shadowColor);
+    -webkit-filter: drop-shadow(3px 4px 5px $shadowColor);
+    -moz-filter: drop-shadow(3px 4px 5px $shadowColor);
+}
+
+// image fitted to parent block
+@mixin imgFittedToBox($imgHeight) {
+	width: 100%;
+	height: $imgHeight;
+	object-fit: cover;
+	object-position: center;
+}
+
+// image size contracted or scaled down to parent block
+@mixin imgSizeContracted($imgMaxWidth) {
+	max-width: $imgMaxWidth;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// image border radius
+@mixin imgBorderRadius($borderRad) {
+	-moz-border-radius: $borderRad;
+	-webkit-border-radius: $borderRad;
+	border-radius: $borderRad;
+}
+
+// image basic box shadow
+@mixin imageShadowBasic($shadow-color) {
+	@include boxShadowBasic( $shadow-color );
+}
+
+// image four sides box shadow
+@mixin imageFourSidesShadow($shadow-color) {
+	@include boxShadowFourSides( $shadow-color );
+}
+
+// image top and bottom box shadow
+@mixin imageTopAndBottomShadow($shadow-color) {
+	@include boxShadowTopBottom( $shadow-color );
+}
+
+// image with a fancy box shadow
+@mixin imageFancyShadow($clrHexVar) {
+	@include boxShadowFancy($clrHexVar);
+}

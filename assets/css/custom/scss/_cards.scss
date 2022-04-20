@@ -1,0 +1,41 @@
+/*
+* cards custom styles
+*/
+// card box styles
+.card {
+	@include excerptCardBoxStyle;
+	@include excerptCardBgAndColor($blockElmsPrimaryLightBg, $blockElmsPrimaryLightBgTxt);
+	@include excerptCardBorderAndBgClip(border-box, none, $defaultCardRad);
+	@include excerptCardBoxShadow($boxShadowBeforeHvr);
+}
+// card header styles
+.card-header {
+  @include excerptCardHeaderStyle($defaultCardRad, 1rem, $brandSecondLight, none);
+  &:first-child {
+    @include excerptCardHeaderFirstBorderRad($defaultCardRad);
+  }
+}
+// card body styles
+.card-body {
+  @include excerptCardBodyStyle(0.5rem, 1rem);
+}
+// card footer styles
+.card-footer {
+  @include excerptCardFooterStyle(0.5rem, 1rem, $brandSecondLight, 1px solid $brandFirstLight);
+  &:last-child {
+    @include excerptCardFooterLastBorderRad($defaultCardRad);
+  }
+}
+// card title font styles
+.card-title {
+	@include excerptCardTitleFontStyle(175%, 600);
+	@include excerptCardTitleColor($blockElmsPrimaryLightBgTxt);
+	& a {
+		@include cardLinkStyle($blockElmsPrimaryLightBgLink, $blockElmsPrimaryLightBgLinkHvr);
+	}
+}
+// card text padding top and bottom, font styles
+.card-text {
+	@include excerptCardTextStyle(1rem, 0, 100%, 300);
+	@include excerptCardTextColor($blockElmsPrimaryLightBgTxt);
+}

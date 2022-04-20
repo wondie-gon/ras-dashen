@@ -1,0 +1,57 @@
+/**
+* Video posts styles
+*/
+
+.media-holder {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    &::before {
+      display: block;
+      content: "";
+    }
+    & video, 
+    & iframe,
+    & embed, 
+    & object {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        padding-top: 0;
+        margin-top: 0;
+        object-fit: cover;
+        object-position: center;
+    }
+    &.video-link {
+        height: 40vh;
+        & video, 
+        & iframe,
+        & embed, 
+        & object {
+            top: 0;
+            bottom: 0; 
+        }
+    }
+    &.video-watch {
+        height: 50vh;
+        & video, 
+        & iframe,
+        & embed, 
+        & object {
+            top: 0;
+        }
+    }
+}
+.video-col {
+    & .card-video {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+.wp-block-video {}
+
+

@@ -1,0 +1,107 @@
+// card box shadows
+@mixin excerptCardBoxShadow($shadowClr) {
+  @include boxShadowBasic($shadowClr);
+}
+
+// excerptCardLayout
+@mixin excerptCardBoxStyle {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+}
+// card bg and colors
+@mixin excerptCardBgAndColor($bgClr, $textClr) {
+  background-color: $bgClr;
+  color: $textClr;
+}
+// card bgclip, border, radius styles
+@mixin excerptCardBorderAndBgClip($bgClip, $cardBorder, $borderRad) {
+  background-clip: $bgClip;
+  border: $cardBorder;
+  @include singleValueBorderRadius($borderRad);
+}
+
+// card titles
+@mixin excerptCardTitleFontStyle($font_size, $font_wt) {
+  font-size: $font_size;
+  font-weight: $font_wt;
+}
+@mixin excerptCardTitleColor($titlecolor) {
+  color: $titlecolor;
+}
+// excerpt card link styles
+@mixin cardLinkStyle($linkClr, $linkClr-hover) {
+  color: $linkClr;
+    &:hover, 
+    &:focus {
+      color: $linkClr-hover;
+    }
+}
+// card texts
+@mixin excerptCardTextStyle($p_vert, $p_horz, $font_size, $font_wt) {
+  padding: $p_vert $p_horz;
+  font-size: $font_size;
+  font-weight: $font_wt;
+}
+@mixin excerptCardTextColor($txtColor) {
+  color: $txtColor;
+}
+
+// card header paddings, bg, border-bottom
+@mixin excerptCardHeaderStyle($p_vert, $p_horz, $bgClr, $brdrBottom) {
+  padding: $p_vert $p_horz;
+  background-color: $bgClr;
+  border-bottom: $brdrBottom;
+}
+// card first header border rad
+@mixin excerptCardHeaderFirstBorderRad($cardRad) {
+  border-radius: -webkit-calc(#{$cardRad} - 1px) -webkit-calc(#{$cardRad} - 1px) 0 0;
+  border-radius: -moz-calc(#{$cardRad} - 1px) -moz-calc(#{$cardRad} - 1px) 0 0;
+  border-radius: calc(#{$cardRad} - 1px) calc(#{$cardRad} - 1px) 0 0;
+}
+// card body paddings, layouts
+@mixin excerptCardBodyStyle($p_vert, $p_horz) {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: $p_vert $p_horz;
+}
+// card footer paddings, bg, border-bottom
+@mixin excerptCardFooterStyle($p_vert, $p_horz, $bgClr, $brdrTop) {
+  padding: $p_vert $p_horz;
+  background-color: $bgClr;
+  border-top: $brdrTop;
+}
+// top card img border rad
+@mixin excerptCardTopImgBorderRad($cardRad) {
+  border-top-right-radius: -webkit-calc(#{$cardRad} - 1px);
+  border-top-right-radius: -moz-calc(#{$cardRad} - 1px);
+  border-top-right-radius: calc(#{$cardRad} - 1px);
+  border-top-left-radius: -webkit-calc(#{$cardRad} - 1px);
+  border-top-left-radius: -moz-calc(#{$cardRad} - 1px);
+  border-top-left-radius: calc(#{$cardRad} - 1px);
+}
+// full cover card img border rad
+@mixin excerptCardCoverImgBorderRad($cardRad) {
+  border-radius: -webkit-calc(#{$cardRad} - 1px);
+  border-radius: -moz-calc(#{$cardRad} - 1px);
+  border-radius: calc(#{$cardRad} - 1px);
+}
+// bottom card img border rad
+@mixin excerptCardBottomImgBorderRad($cardRad) {
+  border-bottom-right-radius: -webkit-calc(#{$cardRad} - 1px);
+  border-bottom-right-radius: -moz-calc(#{$cardRad} - 1px);
+  border-bottom-right-radius: calc(#{$cardRad} - 1px);
+  border-bottom-left-radius: -webkit-calc(#{$cardRad} - 1px);
+  border-bottom-left-radius: -moz-calc(#{$cardRad} - 1px);
+  border-bottom-left-radius: calc(#{$cardRad} - 1px);
+}
+// card last footer border rad
+@mixin excerptCardFooterLastBorderRad($cardRad) {
+  border-radius: 0 0 -webkit-calc(#{$cardRad} - 1px) -webkit-calc(#{$cardRad} - 1px);
+  border-radius: 0 0 -moz-calc(#{$cardRad} - 1px) -moz-calc(#{$cardRad} - 1px);
+  border-radius: 0 0 calc(#{$cardRad} - 1px) calc(#{$cardRad} - 1px);
+}

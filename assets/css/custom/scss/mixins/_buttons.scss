@@ -1,0 +1,116 @@
+// mixin to initialize btn style 
+@mixin buttonStyleInit {
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	padding: 0.375rem 0.75rem;
+	font-size: 100%;
+	font-weight: 500;
+	line-height: 1.5;
+}
+
+// btn border styles
+@mixin btnBorderRounded( $thickness, $brdrColor, $radius ) {
+	border: $thickness solid $brdrColor;
+	@include singleValueBorderRadius($radius);
+	&:hover,
+  	&:focus,
+  	&:visited {
+	    border-color: $btnHoverDefaultBg;
+  	}
+}
+
+// btn border none and radius mixin
+@mixin btnBorderNoneRounded( $radius ) {
+	border: none;
+	@include singleValueBorderRadius($radius);
+}
+
+// btn transition mixin 
+@mixin buttonTransition( $time, $tFunc ) {
+	-webkit-transition: color $time $tFunc,background-color $time $tFunc,box-shadow $time + 0.2 $tFunc;
+	-moz-transition: color $time $tFunc,background-color $time $tFunc,box-shadow $time + 0.2 $tFunc;
+	-ms-transition: color $time $tFunc,background-color $time $tFunc,box-shadow $time + 0.2 $tFunc;
+	-o-transition: color $time $tFunc,background-color $time $tFunc,box-shadow $time + 0.2 $tFunc;
+	transition: color $time $tFunc,background-color $time $tFunc,box-shadow $time + 0.2 $tFunc;
+}
+
+// btn style common 
+@mixin buttonCommonStyle {
+	@include buttonStyleInit;
+  	@include btnBorderNoneRounded( $btnRadiusDef );
+  	@include buttonTransition( .3s, ease-in-out );
+}
+
+// btn bg, link color, box shadow etc
+// default bg, text color, and shadow are used
+@mixin buttonBgAndColorShadow( $bgClr: $btnDarkDefaultBg, $clr: $btnDarkDefaultBgLinkClr, $bgClr-hover: $btnHoverDefaultBg, $clr-hover: $btnHoverDefaultTxt, $shadowBefore: $btnShadowBeforeHvr, $shadowAfter: $btnShadowAfterHvr ) {
+	background-color: $bgClr;
+	color: $clr;
+	-webkit-box-shadow: 0 2px 3px 0 $shadowBefore, 0 2px 8px 0 $shadowBefore;
+	-moz-box-shadow: 0 2px 3px 0 $shadowBefore, 0 2px 8px 0 $shadowBefore;
+  	box-shadow: 0 2px 3px 0 $shadowBefore, 0 2px 8px 0 $shadowBefore;
+	&:hover,
+  	&:focus,
+  	&:visited {
+  		background-color: $bgClr-hover;
+	    color: $clr-hover;
+	    outline: 0;
+	    -webkit-box-shadow: 0 4px 6px 0 $shadowAfter, 0 4px 10px 0 $shadowAfter;
+	    -moz-box-shadow: 0 4px 6px 0 $shadowAfter, 0 4px 10px 0 $shadowAfter;
+	    box-shadow: 0 4px 6px 0 $shadowAfter, 0 4px 10px 0 $shadowAfter;
+  	}
+}
+
+
+
+// mixin for buttons coloring styles
+@mixin buttonPrimaryLightBg {
+  @include buttonBgAndColorShadow( $btnLightDefaultBg, $btnLightDefaultBgLinkClr, $btnHoverDefaultBg, $btnHoverDefaultTxt, $btnShadowBeforeHvr, $btnShadowAfterHvr );
+}
+
+@mixin buttonPrimaryDarkBg {
+  @include buttonBgAndColorShadow( $btnDarkDefaultBg, $btnDarkDefaultBgLinkClr, $btnHoverDefaultBg, $btnHoverDefaultTxt, $btnShadowBeforeHvr, $btnShadowAfterHvr );
+}
+
+@mixin buttonDarkOutline {
+  @include buttonBgAndColorShadow( transparent, $btnLightDefaultBgLinkClr, $btnHoverDefaultBg, $btnHoverDefaultTxt, $btnShadowBeforeHvr, $btnShadowAfterHvr );
+}
+
+@mixin buttonLightOutline {
+  @include buttonBgAndColorShadow( transparent, $btnDarkDefaultBgLinkClr, $btnHoverDefaultBg, $btnHoverDefaultTxt, $btnShadowBeforeHvr, $btnShadowAfterHvr );
+}
+
+
+// mixin for scroll up btn default style
+@mixin siteBottomScrollUpBtn($widthBtn, $paddingAll, $font_size, $l_height, $bottomPos, $rightPos, $bgClr, $txtClr) {
+	position: fixed;
+	width: $widthBtn;
+	padding: $paddingAll;
+	font-size: $font_size;
+	line-height: $l_height;
+	bottom: $bottomPos;
+	right:$rightPos;
+	background-color: $bgClr;
+	color: $txtClr;
+	border: none;
+	@include twoAttributesTransition( color, text-shadow, 0.3s, 0.3s, ease-in-out );
+	cursor:pointer;
+}
+// mixin for scroll up btn transform and animation
+@mixin transformAndAnimateScrollUpBtn( $bgClrHover, $txtClr1, $txtClr2, $rotateInit, $rotateFinal, $transTime ) {
+	text-shadow: none;
+	@include transform( rotate( $rotateInit ) );
+	@include animate( transform, 0.6s );
+	&:hover,
+	&:focus {
+		background-color: $bgClrHover;
+		color: $txtClr2;
+		text-shadow: -5px -5px 5px $txtClr1, -5px -10px 10px $txtClr2;
+		@include transform( rotate( $rotateFinal ) );
+	}
+}

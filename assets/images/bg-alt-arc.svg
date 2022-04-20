@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="1400" height="500" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ 	<g>
+	  <path id="arcs_alternate" d="m537.77778,493.77778l-529.77778,-1.77778l-2.66667,-486.66667c0,0 243.11111,-8.88889 389.77778,181.77778c146.66667,190.66667 142.66667,306.66667 142.66667,306.66667z" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" stroke="#47738c" fill="#47738c"/>
+	  <path id="svg_1" d="m543.55556,494.22222c0,0 416,-37.33333 554.66666,-93.33333c138.66667,-56 297.33334,-141.33333 296.44445,-142.22222c-0.88889,-0.88889 0.88889,235.55555 0,234.66666c-0.88889,-0.88889 -851.11111,0.88889 -851.11111,0.88889z" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" stroke="#f7cb46" fill="#f7cb46" />
+ 	</g>
+</svg>

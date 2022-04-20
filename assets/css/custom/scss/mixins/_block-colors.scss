@@ -1,0 +1,31 @@
+//-----------------------------------------------
+// mixins for major blocks bg and content colors
+//-----------------------------------------------
+
+// section bg and text color
+@mixin pageSectionBgAndTxtColor($bgClr: $siteDefaultLightBg, $txtClr: $siteDefaultLightBgTxt) {
+	background-color: $bgClr;
+	color: $txtClr;
+}
+// section text color
+@mixin pageSectionTextColor($txtClr: $siteDefaultLightBgTxt) {
+	color: $txtClr;
+}
+
+// excerpt blocks bg and colors
+@mixin excerptBlockBgAndColor($bgClr, $textClr) {
+  background-color: $bgClr;
+  color: $textClr;
+}
+@mixin excerptBlockTextColor($txtColor) {
+  color: $txtColor;
+}
+
+// excerpt block link colors styles
+@mixin excerptBlockLinkStyle($linkClr, $linkClr-hover) {
+	color: $linkClr;
+  	&:hover, 
+  	&:focus {
+    	color: $linkClr-hover;
+  	}
+}

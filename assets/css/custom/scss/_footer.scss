@@ -1,0 +1,133 @@
+/**
+* Footer styles
+*/
+footer {
+	&.ui-sitemain-footer {
+		display: block;
+		position: relative;
+		left: 0;
+		bottom: 0;
+    	z-index: 1400;
+    	padding-top: 1rem;
+		background-color: $siteFooterBg;
+		color: $siteFooterTextClr;
+		& a {
+			color: $siteFooterLinkClr;
+			text-decoration: none;
+			&:hover, 
+			&:focus {
+				color: $siteFooterLinkClrHvr;
+			}
+		}
+		& .widget {
+			&.foot-widget {
+				& ul {
+					display: -ms-flexbox;
+					display: flex;
+					-ms-flex-direction: column;
+					flex-direction: column;
+					list-style: none;
+					padding-left: 0;
+					margin-left: 0;
+					margin-bottom: 1.5rem;
+					& li {
+						position: relative;
+					    display: -ms-flexbox;
+						display: flex;
+						-ms-flex-pack: justify;
+						justify-content: space-between;
+						-ms-flex-align: center;
+						align-items: center;
+					    padding: 0.25rem 0;
+					    margin-bottom: -1px;
+					    background-color: transparent;
+					    border: none;
+					    &:first-child {
+						    position: relative;
+							display: block;
+							padding: 0.25rem 0;
+							margin-bottom: -1px;
+							background-color: transparent;
+							border: none;
+					    }
+					}
+					&.contact-info {
+						& li {
+							-ms-flex-pack: start;
+							justify-content: flex-start;
+						}
+					}
+				}
+				& .badge {
+				    display: inline-block;
+					padding: 0.25rem 0.4rem;
+					font-size: 75%;
+					font-weight: 600;
+					line-height: 1;
+					text-align: center;
+					white-space: nowrap;
+					vertical-align: baseline;
+					background-color: $footerElmsBg;
+					color: $footerElmsLinkClr;
+					-webkit-border-radius: 0.65rem;
+					-moz-border-radius: 0.65rem;
+					border-radius: 0.65rem;
+					-webkit-transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+					-moz-transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+					-ms-transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+					-o-transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+					transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+				}
+			    & .badge-info {
+			    	background-color: $footerElmsBg;
+				    color: $footerElmsLinkClr;
+				}
+				& .widget-title {
+					margin-bottom: 0.25rem;
+					border-bottom: 2px solid $siteFooterTextClr;
+					& .foot-widget-title {
+						color: $siteFooterTextClr;
+						font-size: 150%;
+						font-weight: 500;
+						line-height: 1.5;
+						margin-bottom: 0.25rem;
+					}
+				}
+				& a {
+					color: $siteFooterLinkClr;
+					text-decoration: none;
+					&:hover, 
+					&:focus {
+						color: $siteFooterLinkClrHvr;
+					}
+				}
+			}
+		}
+	}
+	& .ui-footer-social {
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
+	}
+	& .inner-bottom {
+		padding-top: 1.5rem;
+		padding-bottom: 0.5rem;
+		& p {
+			font-size: 100%;
+			color: $siteFooterTextClr;
+			& span {
+				& a {
+					color: $siteFooterLinkClr;
+					&:hover, 
+					&:focus {
+						color: $siteFooterLinkClrHvr;
+					}
+				}
+			 &.dev-auth,
+			 &.comp-name, 
+			 &.comp-tel {
+			 	font-size: 87.5%;
+			 }
+			}
+		}
+	}
+}

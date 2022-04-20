@@ -1,0 +1,55 @@
+/*
+* Sidebar area styles
+*/
+.sidebar-col {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  & .list-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-left: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+  & .list-group-item {
+    position: relative;
+    display: block;
+    padding: 0.75rem;
+    margin-bottom: -1px;
+    background-color: $rootLight;
+    border: none;
+    &.widget {
+      background-color: $rootLight;
+      border: none;
+      -webkit-border-radius: 0.65rem;
+      -moz-border-radius: 0.65rem;
+      border-radius: 0.65rem;
+      @include boxShadowBasic($boxShadowBeforeHvr);
+      & .widget-title {
+        font-size: 137.5%;
+        font-weight: 600;
+        padding: 0.5rem;
+        color: $rootDark;
+        border-bottom: 2px solid $brandThirdLight;
+      }
+      & ul {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding-left: 0;
+        margin: 0;
+        & li {
+          position: relative;
+          display: block;
+          padding: 0.75rem;
+          margin-bottom: -1px;
+          background-color: $rootLight;
+          border: none;
+        }
+      }
+    }
+  } 
+}

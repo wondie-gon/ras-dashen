@@ -1,0 +1,145 @@
+/**
+* image styles and transition effects
+*/
+.img-fit-box {
+  @include imgFittedToBox(100%);
+}
+.img-fitBox {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.img-contracted-50 {
+  @include imgSizeContracted(50%);
+}
+.post-thumbnail {
+	margin-bottom: 0.5rem;
+	& .img-fitBox {
+	  height: 50vh;
+	  @include boxShadowBasic($boxShadowBeforeHvr);
+	}
+	&.single-post-img {
+	  & .img-fitBox {
+	    height: 70vh;
+	    @include boxShadowBasic($boxShadowBeforeHvr);
+	  } 
+	}
+}
+.bgimg {
+  position: relative;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.zooms-when-hovered {
+	img, 
+	video {
+		-webkit-transition: $hovered-img-zoom-transition;
+		-moz-transition: $hovered-img-zoom-transition;
+		-o-transition: $hovered-img-zoom-transition;
+		transition: $hovered-img-zoom-transition;
+	}
+	&:hover {
+		img, 
+		video {
+			-webkit-transform: $hovered-img-zoom-transform;
+			-moz-transform: $hovered-img-zoom-transform;
+			-o-transform: $hovered-img-zoom-transform;
+			transform: $hovered-img-zoom-transform;
+		}
+	}
+}
+.featured-img-link {
+  position: relative;
+  height: 50vh;
+  & .bgimg {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include boxShadowBasic($boxShadowBeforeHvr);
+  }
+  & .zooms-when-hovered {
+    -webkit-transition: $hovered-img-zoom-transition;
+    -moz-transition: $hovered-img-zoom-transition;
+    -o-transition: $hovered-img-zoom-transition;
+    transition: $hovered-img-zoom-transition;
+  }
+  &:hover,
+  &:focus {
+    .zooms-when-hovered {
+      &:after {
+        -webkit-transform: $hovered-img-zoom-transform;
+        -moz-transform: $hovered-img-zoom-transform;
+        -o-transform: $hovered-img-zoom-transform;
+        transform: $hovered-img-zoom-transform;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .featured-img-link {
+    height: auto;
+  }
+}
+
+/**
+* Hexagon clipped shape image holder with border
+*/
+$offst: 2px;
+$vwidth: 100vw;
+$holder-width: calc(#{$vwidth} - 33px);
+$holder-height: $holder-width;
+.hexagon-bordered {
+  display: inline-block;
+  position: relative;
+  margin-left: calc(-#{$offst * 2} - 10px);
+  width: $holder-width;
+  height: $holder-height;
+  background: $brandThirdLight;
+  background: linear-gradient(-225deg, $brandThirdDark 0%, $brandThirdLight 48%, $brandThirdLight 100%);
+  background: -webkit-linear-gradient(-225deg, $brandThirdDark 0%, $brandThirdLight 48%, $brandThirdLight 100%);
+  box-sizing: border-box;
+  -webkit-clip-path: polygon(92.32051% 40%, 93.79385% 43.1596%, 94.69616% 46.52704%, 95% 50%, 94.69616% 53.47296%, 93.79385% 56.8404%, 92.32051% 60%, 79.82051% 81.65064%, 77.82089% 84.50639%, 75.35575% 86.97152%, 72.5% 88.97114%, 69.3404% 90.44449%, 65.97296% 91.34679%, 62.5% 91.65064%, 37.5% 91.65064%, 34.02704% 91.34679%, 30.6596% 90.44449%, 27.5% 88.97114%, 24.64425% 86.97152%, 22.17911% 84.50639%, 20.17949% 81.65064%, 7.67949% 60%, 6.20615% 56.8404%, 5.30384% 53.47296%, 5% 50%, 5.30384% 46.52704%, 6.20615% 43.1596%, 7.67949% 40%, 20.17949% 18.34936%, 22.17911% 15.49361%, 24.64425% 13.02848%, 27.5% 11.02886%, 30.6596% 9.55551%, 34.02704% 8.65321%, 37.5% 8.34936%, 62.5% 8.34936%, 65.97296% 8.65321%, 69.3404% 9.55551%, 72.5% 11.02886%, 75.35575% 13.02848%, 77.82089% 15.49361%, 79.82051% 18.34936%);
+  clip-path: polygon(92.32051% 40%, 93.79385% 43.1596%, 94.69616% 46.52704%, 95% 50%, 94.69616% 53.47296%, 93.79385% 56.8404%, 92.32051% 60%, 79.82051% 81.65064%, 77.82089% 84.50639%, 75.35575% 86.97152%, 72.5% 88.97114%, 69.3404% 90.44449%, 65.97296% 91.34679%, 62.5% 91.65064%, 37.5% 91.65064%, 34.02704% 91.34679%, 30.6596% 90.44449%, 27.5% 88.97114%, 24.64425% 86.97152%, 22.17911% 84.50639%, 20.17949% 81.65064%, 7.67949% 60%, 6.20615% 56.8404%, 5.30384% 53.47296%, 5% 50%, 5.30384% 46.52704%, 6.20615% 43.1596%, 7.67949% 40%, 20.17949% 18.34936%, 22.17911% 15.49361%, 24.64425% 13.02848%, 27.5% 11.02886%, 30.6596% 9.55551%, 34.02704% 8.65321%, 37.5% 8.34936%, 62.5% 8.34936%, 65.97296% 8.65321%, 69.3404% 9.55551%, 72.5% 11.02886%, 75.35575% 13.02848%, 77.82089% 15.49361%, 79.82051% 18.34936%);
+  & .img-fitBox {
+    position: absolute;
+    top: $offst; 
+    left: $offst;
+    width: calc(#{$holder-width} - #{$offst * 2} - 10px);
+    height: calc(#{$holder-height} - #{$offst * 2} - 10px);
+    -webkit-clip-path: polygon(92.32051% 40%, 93.79385% 43.1596%, 94.69616% 46.52704%, 95% 50%, 94.69616% 53.47296%, 93.79385% 56.8404%, 92.32051% 60%, 79.82051% 81.65064%, 77.82089% 84.50639%, 75.35575% 86.97152%, 72.5% 88.97114%, 69.3404% 90.44449%, 65.97296% 91.34679%, 62.5% 91.65064%, 37.5% 91.65064%, 34.02704% 91.34679%, 30.6596% 90.44449%, 27.5% 88.97114%, 24.64425% 86.97152%, 22.17911% 84.50639%, 20.17949% 81.65064%, 7.67949% 60%, 6.20615% 56.8404%, 5.30384% 53.47296%, 5% 50%, 5.30384% 46.52704%, 6.20615% 43.1596%, 7.67949% 40%, 20.17949% 18.34936%, 22.17911% 15.49361%, 24.64425% 13.02848%, 27.5% 11.02886%, 30.6596% 9.55551%, 34.02704% 8.65321%, 37.5% 8.34936%, 62.5% 8.34936%, 65.97296% 8.65321%, 69.3404% 9.55551%, 72.5% 11.02886%, 75.35575% 13.02848%, 77.82089% 15.49361%, 79.82051% 18.34936%);
+    clip-path: polygon(92.32051% 40%, 93.79385% 43.1596%, 94.69616% 46.52704%, 95% 50%, 94.69616% 53.47296%, 93.79385% 56.8404%, 92.32051% 60%, 79.82051% 81.65064%, 77.82089% 84.50639%, 75.35575% 86.97152%, 72.5% 88.97114%, 69.3404% 90.44449%, 65.97296% 91.34679%, 62.5% 91.65064%, 37.5% 91.65064%, 34.02704% 91.34679%, 30.6596% 90.44449%, 27.5% 88.97114%, 24.64425% 86.97152%, 22.17911% 84.50639%, 20.17949% 81.65064%, 7.67949% 60%, 6.20615% 56.8404%, 5.30384% 53.47296%, 5% 50%, 5.30384% 46.52704%, 6.20615% 43.1596%, 7.67949% 40%, 20.17949% 18.34936%, 22.17911% 15.49361%, 24.64425% 13.02848%, 27.5% 11.02886%, 30.6596% 9.55551%, 34.02704% 8.65321%, 37.5% 8.34936%, 62.5% 8.34936%, 65.97296% 8.65321%, 69.3404% 9.55551%, 72.5% 11.02886%, 75.35575% 13.02848%, 77.82089% 15.49361%, 79.82051% 18.34936%);
+  }  
+}
+@media (min-width: 576px) {
+  $vwidth-sm: 50vw;
+  $holder-width-sm: calc(#{$vwidth-sm} - 33px);
+  $holder-height-sm: $holder-width-sm;
+  .hexagon-bordered {
+    width: $holder-width-sm;
+    height: $holder-height-sm;
+    & .img-fitBox {
+      width: calc(#{$holder-width-sm} - #{$offst * 2} - 10px);
+      height: calc(#{$holder-height-sm} - #{$offst * 2} - 10px);
+    }
+  }
+}
+@media (min-width: 768px) {
+  $vwidth-md: 25vw;
+  $holder-width-md: calc(#{$vwidth-md} - 33px);
+  $holder-height-md: $holder-width-md;
+  .hexagon-bordered {
+    width: $holder-width-md;
+    height: $holder-height-md;
+    & .img-fitBox {
+      width: calc(#{$holder-width-md} - #{$offst * 2} - 10px);
+      height: calc(#{$holder-height-md} - #{$offst * 2} - 10px);
+    }
+  }
+}

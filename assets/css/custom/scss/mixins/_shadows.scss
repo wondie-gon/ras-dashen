@@ -1,0 +1,71 @@
+// shadows with box-shadow and filter
+// put a desired box shadow
+// using box shadow syntax below 
+// box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];
+@mixin castBoxShadow( $h-offset, $v-offset, $blur-rad, $spread-rad: 0, $shadow-color ) {
+	-webkit-box-shadow: $h-offset $v-offset $blur-rad $spread-rad $shadow-color;
+	-moz-box-shadow: $h-offset $v-offset $blur-rad $spread-rad $shadow-color;
+	box-shadow: $h-offset $v-offset $blur-rad $spread-rad $shadow-color;
+}
+// basic shadow that can be commonly used
+@mixin boxShadowBasic( $shadow-color ) {
+	-webkit-box-shadow: 0 4px 8px $shadow-color;
+	-moz-box-shadow: 0 4px 8px $shadow-color;
+	box-shadow: 0 4px 8px $shadow-color;
+}
+// cast shadow on all four box sides
+@mixin boxShadowFourSides( $shadow-color ) {
+	-webkit-box-shadow: 0 0 4px 4px $shadow-color;
+	-moz-box-shadow: 0 0 4px 4px $shadow-color;
+	box-shadow: 0 0 4px 4px $shadow-color;
+}
+// cast shadow on top and bottom sides
+@mixin boxShadowTopBottom( $clrHexVar ) {
+	-webkit-box-shadow: 0 -6px 4px -4px rgba($clrHexVar, 0.3), 0 6px 4px -4px rgba($clrHexVar, 0.1);
+	-moz-box-shadow: 0 -6px 4px -4px rgba($clrHexVar, 0.3), 0 6px 4px -4px rgba($clrHexVar, 0.1);
+	box-shadow: 0 -6px 4px -4px rgba($clrHexVar, 0.3), 0 6px 4px -4px rgba($clrHexVar, 0.1);
+}
+// bottom right and left lifted up shadow effect
+// var should have value of clr hex code
+@mixin bottomRightLeftLiftedUpShadeEffect($box-width, $box-height, $v-margin, $v-offset, $blur-rad, $clrHexVar, $fold-deg) {
+  position: relative;
+  width: $box-width;
+  height: $box-height;
+  margin: $v-margin auto;
+  &:before,
+  &:after {
+	z-index: -1;
+	position: absolute;
+	content: "";
+	bottom: 25px;
+	left: 10px;
+	width: calc(#{$box-width} - 20%);
+	top: 80%;
+	max-width: calc(#{$box-width} - 10%);
+	background: $clrHexVar;
+	-webkit-box-shadow: 0 $v-offset $blur-rad $clrHexVar;
+	-moz-box-shadow: 0 $v-offset $blur-rad $clrHexVar;
+	box-shadow: 0 $v-offset $blur-rad $clrHexVar;
+	-webkit-transform: rotate(-$fold-deg);
+	-moz-transform: rotate(-$fold-deg);
+	-o-transform: rotate(-$fold-deg);
+	-ms-transform: rotate(-$fold-deg);
+	transform: rotate(-$fold-deg);
+  }
+  &:after {
+	-webkit-transform: rotate($fold-deg);
+	-moz-transform: rotate($fold-deg);
+	-o-transform: rotate($fold-deg);
+	-ms-transform: rotate($fold-deg);
+	transform: rotate($fold-deg);
+	right: 10px;
+	left: auto;
+  }
+}
+// smooth fancy shadow effect
+// var should have value of clr hex code
+@mixin boxShadowFancy($clrHexVar) {
+  -webkit-box-shadow: 0 2.8px 2.2px rgba($clrHexVar, 0.034), 0 6.7px 5.3px rgba($clrHexVar, 0.048), 0 12.5px 10px rgba($clrHexVar, 0.06), 0 22.3px 17.9px rgba($clrHexVar, 0.072), 0 41.8px 33.4px rgba($clrHexVar, 0.086), 0 100px 80px rgba($clrHexVar, 0.12);
+  -moz-box-shadow: 0 2.8px 2.2px rgba($clrHexVar, 0.034), 0 6.7px 5.3px rgba($clrHexVar, 0.048), 0 12.5px 10px rgba($clrHexVar, 0.06), 0 22.3px 17.9px rgba($clrHexVar, 0.072), 0 41.8px 33.4px rgba($clrHexVar, 0.086), 0 100px 80px rgba($clrHexVar, 0.12);
+  box-shadow: 0 2.8px 2.2px rgba($clrHexVar, 0.034), 0 6.7px 5.3px rgba($clrHexVar, 0.048), 0 12.5px 10px rgba($clrHexVar, 0.06), 0 22.3px 17.9px rgba($clrHexVar, 0.072), 0 41.8px 33.4px rgba($clrHexVar, 0.086), 0 100px 80px rgba($clrHexVar, 0.12);
+}

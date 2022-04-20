@@ -1,0 +1,38 @@
+// vars for diagonal clipping
+:root {
+  --clipper-num: 2rem;
+}
+
+// clip-path diagonally to right bottom
+@mixin clipDiagonalToRightBottom {
+	-webkit-clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - var(--clipper-num)), 0% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - var(--clipper-num)), 0% 100%);
+}
+
+// clip-path trapezoid to right
+@mixin clipTrapezoidToRight {
+	clip-path: polygon(0 calc(0% + var(--clipper-num)), 100% 0%, 100% 100%, 0 calc(100% - var(--clipper-num)));
+  	-webkit-clip-path: polygon(0 calc(0% + var(--clipper-num)), 100% 0%, 100% 100%, 0 calc(100% - var(--clipper-num)));
+}
+
+// clip-path hexagonally
+@mixin clipToHexagon {
+	-webkit-clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    -webkit-clip-path: url(#intro_img_clipper);
+    clip-path: url(#intro_img_clipper);
+}
+
+// clip-path service imgs hexagonally
+@mixin clipServiceImageToHexagon {
+	-webkit-clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+	clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+	-webkit-clip-path: url(#service_img_clipper);
+	clip-path: url(#service_img_clipper);
+}
+
+// clip-path diagonally to left top
+@mixin clipDiagonalToLeftTop {
+	-webkit-clip-path: polygon(0 0, 100% calc(0% + var(--clipper-num)), 100% 100%, 0 100%);
+  	clip-path: polygon(0 0, 100% calc(0% + var(--clipper-num)), 100% 100%, 0 100%);
+}

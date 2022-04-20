@@ -1,0 +1,205 @@
+// styles for various flex box behaviours, alignment and content arrangements
+
+// flex display elements
+@mixin displayFlexItems {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+//-----------flex items alignment horizontally-------
+// flex contents horizontally collected at start
+@mixin flexContentsHorizontallyOnStart {
+	-webkit-box-pack: start;
+	-webkit-justify-content: flex-start;
+	-moz-box-pack: start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+}
+
+// horizontally justified contents in flex
+@mixin flexContentsHorizontallyJustified {
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	-moz-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+}
+
+// horizontally distributed contents in flex
+@mixin flexContentsHorizontallyDistributed {
+	-webkit-justify-content: space-around;
+	-ms-flex-pack: distribute;
+	justify-content: space-around;
+}
+
+// flex contents horizontally collected on center
+@mixin flexContentsHorizontallyOnCenter {
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-moz-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+
+// flex contents horizontally collected at end
+@mixin flexContentsHorizontallyFarEnd {
+	-webkit-box-pack: end;
+	-webkit-justify-content: flex-end;
+	-moz-box-pack: end;
+	-ms-flex-pack: end;
+	justify-content: flex-end;
+}
+
+//-----------flex items alignment vertically-------
+// top aligned flex items
+@mixin flexItemsAlignedTop {
+	-webkit-box-align: start;
+	-webkit-align-items: flex-start;
+	-moz-box-align: start;
+	-ms-flex-align: start;
+	align-items: flex-start;
+}
+
+// flex items on vertical baseline
+@mixin flexItemsOnVerticalBaseline {
+	-webkit-box-align: baseline;
+	-webkit-align-items: baseline;
+	-moz-box-align: baseline;
+	-ms-flex-align: baseline;
+	align-items: baseline;
+}
+
+// vertically centered flex items
+@mixin flexItemsVerticallyAlignedMiddle {
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+// vertically stretched flex items
+@mixin flexItemsVerticallyStretched {
+	-webkit-box-align: stretch;
+	-webkit-align-items: stretch;
+	-moz-box-align: stretch;
+	-ms-flex-align: stretch;
+	align-items: stretch;
+}
+
+// bottom aligned flex items
+@mixin flexItemsAlignedBottom {
+	-webkit-box-align: end;
+	-webkit-align-items: flex-end;
+	-moz-box-align: end;
+	-ms-flex-align: end;
+	align-items: flex-end;
+}
+
+//---flex items alignment and arrangement both horizontally and vertically---
+
+// horizontally pulled to the start
+@mixin flexItemsHorizontalStartOnTop {
+	@include displayFlexItems;
+	@include flexContentsHorizontallyOnStart;
+	@include flexItemsAlignedTop;
+}
+@mixin flexItemsHorizontalStartOnMiddle {
+	@include displayFlexItems;
+	@include flexContentsHorizontallyOnStart;
+	@include flexItemsVerticallyAlignedMiddle;
+}
+@mixin flexItemsHorizontalStartOnBottom {
+	@include displayFlexItems;
+	@include flexContentsHorizontallyOnStart;
+	@include flexItemsAlignedBottom;
+}
+
+// horizontally justified
+@mixin flexItemsJustifiedOnTop {
+	@include displayFlexItems;
+	@include flexContentsHorizontallyJustified;
+	@include flexItemsAlignedTop;
+}
+@mixin flexItemsJustifiedOnMiddle {
+	@include displayFlexItems;
+	@include flexContentsHorizontallyJustified;
+	@include flexItemsVerticallyAlignedMiddle;
+}
+@mixin flexItemsHorizJustifiedVertiStretched {
+	@include displayFlexItems;
+	@include flexContentsHorizontallyJustified;
+	@include flexItemsVerticallyStretched;
+}
+@mixin flexItemsJustifiedOnBottom {
+	@include displayFlexItems;
+	@include flexContentsHorizontallyJustified;
+	@include flexItemsAlignedBottom;
+}
+
+// horizontally distributed
+@mixin flexItemsDistributedOnTop {
+	@include displayFlexItems;
+	@include flexContentsHorizontallyDistributed;
+	@include flexItemsAlignedTop;
+}
+@mixin flexItemsDistributedOnMiddle {
+	@include displayFlexItems;
+	@include flexContentsHorizontallyDistributed;
+	@include flexItemsVerticallyAlignedMiddle;
+}
+@mixin flexItemsHorizDistributedVertiStretched {
+	@include displayFlexItems;
+	@include flexContentsHorizontallyDistributed;
+	@include flexItemsVerticallyStretched;
+}
+@mixin flexItemsDistributedOnBottom {
+	@include displayFlexItems;
+	@include flexContentsHorizontallyDistributed;
+	@include flexItemsAlignedBottom;
+}
+
+// horizontally centered
+@mixin flexItemsHorizontalCenteredOnTop {
+	@include displayFlexItems;
+	@include flexContentsHorizontallyOnCenter;
+	@include flexItemsAlignedTop;
+}
+@mixin flexItemsHorizontalCenteredOnMiddle {
+	@include displayFlexItems;
+	@include flexContentsHorizontallyOnCenter;
+	@include flexItemsVerticallyAlignedMiddle;
+}
+@mixin flexItemsHorizCenteredVertiStretched {
+	@include displayFlexItems;
+	@include flexContentsHorizontallyOnCenter;
+	@include flexItemsVerticallyStretched;
+}
+@mixin flexItemsHorizontalCenteredOnBottom {
+	@include displayFlexItems;
+	@include flexContentsHorizontallyOnCenter;
+	@include flexItemsAlignedBottom;
+}
+
+// horizontally pushed to the end
+@mixin flexItemsHorizontalEndOnTop {
+	@include displayFlexItems;
+	@include flexContentsHorizontallyFarEnd;
+	@include flexItemsAlignedTop;
+}
+@mixin flexItemsHorizontalEndOnMiddle {
+	@include displayFlexItems;
+	@include flexContentsHorizontallyFarEnd;
+	@include flexItemsVerticallyAlignedMiddle;
+}
+@mixin flexItemsHorizontalEndOnBottom {
+	@include displayFlexItems;
+	@include flexContentsHorizontallyFarEnd;
+	@include flexItemsAlignedBottom;
+}
+
+
+

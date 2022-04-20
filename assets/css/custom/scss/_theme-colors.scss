@@ -1,0 +1,134 @@
+// ------------------------------------------------------------------
+// block elements bg & hoverd bg, text, link & hovered bg color vars
+// ------------------------------------------------------------------
+
+// site's default light colored bg
+$siteDefaultLightBg: $pageLightBg;
+$siteDefaultLightBgHvr: $pageLightBgHvr;
+$siteDefaultLightBgTxt: $pageLightBgTxtColor;
+$siteDefaultLightBgLink: $pageLightBgLinkColor;
+$siteDefaultLightBgLinkHvr: $pageLightBgLinkColorHvr;
+
+// block elements with 1st-choice light colored bg
+$blockElmsPrimaryLightBg: $mostLightBg;
+$blockElmsPrimaryLightBgHvr: $mostLightBgHvr;
+$blockElmsPrimaryLightBgTxt: $mostLightBgTxt;
+$blockElmsPrimaryLightBgLink: $mostLightBgLink;
+$blockElmsPrimaryLightBgLinkHvr: $mostLightBgLinkHvr;
+
+// block elements with 2nd-choice light colored bg
+$blockElmsSecondaryLightBg: $moreLightBg;
+$blockElmsSecondaryLightBgHvr: $moreLightBgHvr;
+$blockElmsSecondaryLightBgTxt: $moreLightBgTxt;
+$blockElmsSecondaryLightBgLink: $moreLightBgLink;
+$blockElmsSecondaryLightBgLinkHvr: $moreLightBgLinkHvr;
+
+// site's default dark colored bg
+$siteDefaultDarkBg: $mostDarkBg;
+$siteDefaultDarkBgHvr: $mostDarkBgHvr;
+$siteDefaultDarkBgTxt: $mostDarkBgTxtColor;
+$siteDefaultDarkBgLink: $mostDarkBgLinkColor;
+$siteDefaultDarkBgLinkHvr: $mostDarkBgLinkColorHvr;
+
+// block elements with 1st-choice dark colored bg
+$blockElmsPrimaryDarkBg: $moreDarkBg;
+$blockElmsPrimaryDarkBgHvr: $moreDarkBgHvr;
+$blockElmsPrimaryDarkBgTxt: $moreDarkBgTxt;
+$blockElmsPrimaryDarkBgLink: $moreDarkBgLink;
+$blockElmsPrimaryDarkBgLinkHvr: $moreDarkBgLinkHvr;
+
+// block elements with 2nd-choice dark colored bg
+$blockElmsSecondaryDarkBg: $lessDarkBg;
+$blockElmsSecondaryDarkBgHvr: $lessDarkBgHvr;
+$blockElmsSecondaryDarkBgTxt: $lessDarkBgTxt;
+$blockElmsSecondaryDarkBgLink: $lessDarkBgLink;
+$blockElmsSecondaryDarkBgLinkHvr: $lessDarkBgLinkHvr;
+
+
+//---------------------------------------
+// footer area bg, txt, link color vars
+//---------------------------------------
+$siteFooterBg: $blockElmsPrimaryDarkBg;
+$siteFooterTextClr: $blockElmsPrimaryDarkBgTxt;
+$siteFooterLinkClr: $blockElmsPrimaryDarkBgLink;
+$siteFooterLinkClrHvr: $blockElmsPrimaryDarkBgLinkHvr;
+
+// block elements in footer area
+$footerElmsBg: $blockElmsSecondaryLightBg;
+$footerElmsBgHvr: $blockElmsSecondaryLightBgHvr;
+$footerElmsTextClr: $blockElmsSecondaryLightBgTxt;
+$footerElmsLinkClr: $blockElmsSecondaryLightBgLink;
+$footerElmsLinkHvrClr: $blockElmsSecondaryLightBgLinkHvr;
+
+//---------------------------------------
+// navbar or header area bg, txt, link color vars
+//---------------------------------------
+// navbar bg's color vars
+$siteNavbarBg: $siteDefaultDarkBg;
+$siteNavbarBgLinkClr: $siteDefaultDarkBgLink;
+$siteNavbarBgHover: $siteDefaultDarkBgHvr;
+$siteNavbarBgLinkHover: $siteDefaultDarkBgLinkHvr;
+$siteNavbarBgTextClr: $siteDefaultDarkBgTxt;
+
+// block elements in navbar area
+$navbarElmsBg: $blockElmsSecondaryLightBg;
+$navbarElmsBgHvr: $blockElmsSecondaryLightBgHvr;
+$navbarElmsTextClr: $blockElmsSecondaryLightBgTxt;
+$navbarElmsLinkClr: $blockElmsSecondaryLightBgLink;
+$navbarElmsLinkHvrClr: $blockElmsSecondaryLightBgLinkHvr;
+
+//----------------------------------------------
+// btn bg, link, border etc color vars
+//----------------------------------------------
+// btn default border colors
+$btnDarkOutlineClr: $siteDefaultLightBgLink;
+$btnLightOutlineClr: $siteDefaultDarkBgTxt;
+
+// btn bg and text colors
+$btnDarkDefaultBg: $blockElmsPrimaryDarkBg;
+$btnDarkDefaultBgLinkClr: $blockElmsPrimaryDarkBgLink;
+
+$btnLightDefaultBg: $blockElmsPrimaryLightBg;
+$btnLightDefaultBgLinkClr: $blockElmsPrimaryLightBgLink;
+
+$btnHoverDefaultBg: $blockElmsPrimaryDarkBgHvr;
+$btnHoverDefaultTxt: $blockElmsPrimaryDarkBgLinkHvr;
+
+// btn shadow
+$btnShadowBeforeHvr: $transparentShadow;
+$btnShadowAfterHvr: $semiTransparentShadow;
+
+$altBtnShadowBeforeHvr: $altTransparentShadow;
+$altBtnShadowAfterHvr: $altSemiTransparentShadow;
+
+
+// badge gradient colors
+$badgeBgGradClr1: $siteDefaultDarkBg;
+$badgeBgGradClr2: $blockElmsSecondaryDarkBg;
+
+//-----------------------------------------------------
+// excerpt blocks, cards bg and text colors vars
+//-----------------------------------------------------
+$excerptBlockPrimaryLightBg: $blockElmsPrimaryLightBg;
+$excerptBlockPrimaryLightBgTxt: $blockElmsPrimaryLightBgTxt;
+$excerptBlockPrimaryLightBgLink: $blockElmsPrimaryLightBgLink;
+$excerptBlockPrimaryLightBgLinkHvr: $blockElmsPrimaryLightBgLinkHvr;
+
+$excerptBlockSecondaryLightBg: $blockElmsSecondaryLightBg;
+$excerptBlockSecondaryLightBgTxt: $blockElmsSecondaryLightBgTxt;
+$excerptBlockSecondaryLightBgLink: $blockElmsSecondaryLightBgLink;
+$excerptBlockSecondaryLightBgLinkHvr: $blockElmsSecondaryLightBgLinkHvr;
+
+$excerptBlockPrimaryDarkBg: $blockElmsPrimaryDarkBg;
+$excerptBlockPrimaryDarkBgTxt: $blockElmsPrimaryDarkBgTxt;
+$excerptBlockPrimaryDarkBgLink: $blockElmsPrimaryDarkBgLink;
+$excerptBlockPrimaryDarkBgLinkHvr: $blockElmsPrimaryDarkBgLinkHvr;
+
+$excerptBlockSecondaryDarkBg: $blockElmsSecondaryDarkBg;
+$excerptBlockSecondaryDarkBgTxt: $blockElmsSecondaryDarkBgTxt;
+$excerptBlockSecondaryDarkBgLink: $blockElmsSecondaryDarkBgLink;
+$excerptBlockSecondaryDarkBgLinkHvr: $blockElmsSecondaryDarkBgLinkHvr;
+
+// default blocks boxshadow colors
+$boxShadowBeforeHvr: $transparentShadow;
+$boxShadowAfterHvr: $semiTransparentShadow;

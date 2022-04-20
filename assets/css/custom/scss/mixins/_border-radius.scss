@@ -1,0 +1,19 @@
+// different styles of border radius mixins
+@mixin singleValueBorderRadius($all-rad) {
+	-moz-border-radius: $all-rad;
+	-webkit-border-radius: $all-rad;
+	border-radius: $all-rad;
+}
+// four corner values given border radius
+@mixin fourCornerValuesBorderRadius($top-l, $top-r, $bottom-r, $bottom-l) {
+	-moz-border-radius: $top-l $top-r $bottom-r $bottom-l;
+	-webkit-border-radius: $top-l $top-r $bottom-r $bottom-l;
+	border-radius: $top-l $top-r $bottom-r $bottom-l;
+}
+
+// fancy border radius
+@mixin eightValuesSlashedBorderRadius($xTopLeft, $xBottomRight, $yTopRight, $yBottomLeft) {
+	-moz-border-radius: $xTopLeft calc(100% - #{$xTopLeft}) $xBottomRight calc(100% - #{$xBottomRight}) / calc(100% - #{$yBottomLeft}) $yTopRight calc(100% - #{$yTopRight}) $yBottomLeft;
+	-webkit-border-radius: $xTopLeft calc(100% - #{$xTopLeft}) $xBottomRight calc(100% - #{$xBottomRight}) / calc(100% - #{$yBottomLeft}) $yTopRight calc(100% - #{$yTopRight}) $yBottomLeft;
+	border-radius: $xTopLeft calc(100% - #{$xTopLeft}) $xBottomRight calc(100% - #{$xBottomRight}) / calc(100% - #{$yBottomLeft}) $yTopRight calc(100% - #{$yTopRight}) $yBottomLeft;
+}

@@ -1,0 +1,156 @@
+/**
+* Admin pages styles
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/**
+* cpt meta boxes
+*/
+.edit-post-meta-boxes-area #poststuff .stuffbox>h3, 
+.edit-post-meta-boxes-area #poststuff h2.hndle, 
+.edit-post-meta-boxes-area #poststuff h3.hndle {
+    box-sizing: border-box;
+    color: inherit;
+    font-size: 1.25rem;
+    font-weight: 600;
+    outline: none;
+    padding: 15px;
+    position: relative;
+    width: 100%;
+}
+.cpt-meta-table {
+	width: 100%;
+	margin-bottom: 1rem;
+	color: #47738c;
+	background-color: #ecfefe;
+	border: 0;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+.cpt-meta-table .mb-sub-header {
+	font-size: 1.2rem;
+	font-weight: 600;
+	color: #0091c8;
+	margin: 1.5rem 0;
+}
+.cpt-meta-table .label-td, 
+.cpt-meta-table .input-td {
+	width: 100%;
+}
+.cpt-meta-table .label-td label, 
+.cpt-meta-table label {
+	font-size: 1rem;
+	font-weight: 500;
+	color: #47738c;
+}
+@media (min-width: 768px) {
+	.cpt-meta-table .label-td, 
+	.cpt-meta-table .input-td {
+		width: auto;
+	}
+}
+input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea {
+    box-shadow: 0 0 0 transparent;
+    -moz-border-radius: 0.5rem;
+	-webkit-border-radius: 0.5rem;
+	border-radius: 0.5rem;
+    border: 1px solid rgba(160, 235, 255, 0.8);
+    background-color: #e1faff;
+    color: #47738c;
+}
+input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week] {
+    padding: 0 8px;
+    line-height: 2;
+    min-height: 30px;
+}
+/*input.all-options, textarea.all-options {
+    width: 250px;
+}*/
+.all-options.form-control {
+	display: block;
+	width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+	height: calc(1.5rem + 0.5rem + 2px);
+	padding: 0.25rem 0.5rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #47738c;
+	background-color: #e1faff;
+	background-clip: padding-box;
+	border: 1px solid rgba(160, 235, 255, 0.8);
+	-moz-border-radius: 0.5rem;
+	-webkit-border-radius: 0.5rem;
+	border-radius: 0.5rem;
+	-webkit-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	-moz-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	-o-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .all-options.form-control {
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
+}
+
+.all-options.form-control::-ms-expand {
+  background-color: transparent;
+  border: 0;
+}
+
+.all-options.form-control:focus {
+  color: #47738c;
+  background-color: rgba(255, 250, 255, 0.8);
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(160, 235, 255, 0.25);
+}
+
+.all-options.form-control::-webkit-input-placeholder {
+  color: #47738c;
+  opacity: 0.8;
+}
+
+.all-options.form-control::-moz-placeholder {
+  color: #47738c;
+  opacity: 0.8;
+}
+
+.all-options.form-control:-ms-input-placeholder {
+  color: #47738c;
+  opacity: 0.8;
+}
+
+.all-options.form-control::-ms-input-placeholder {
+  color: #47738c;
+  opacity: 0.8;
+}
+
+.all-options.form-control::placeholder {
+  color: #47738c;
+  opacity: 0.8;
+}
+
+.all-options.form-control:disabled, .all-options.form-control[readonly] {
+  background-color: #e9ecef;
+  opacity: 0.8;
+}
+
+select.all-options.form-control:focus::-ms-value {
+  color: #47738c;
+  background-color: rgba(255, 250, 255, 0.8);
+}
+
+.all-options.form-control-file,
+.all-options.form-control-range {
+  display: block;
+  width: 100%;
+}

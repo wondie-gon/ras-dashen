@@ -1,0 +1,66 @@
+/*
+* Classed styles for flex items alignement and arrangement
+*/
+// classes for horizontally at start
+.flex-horiz-start-top {
+	@include flexItemsHorizontalStartOnTop; 
+}
+.flex-horiz-start-middle {
+	@include flexItemsHorizontalStartOnMiddle; 
+}
+.flex-horiz-start-bottom {
+	@include flexItemsHorizontalStartOnBottom; 
+}
+
+// classes for horizontally justified
+.flex-horiz-justified-top {
+	@include flexItemsJustifiedOnTop; 
+}
+.flex-horiz-justified-middle {
+	@include flexItemsJustifiedOnMiddle; 
+}
+.flex-horiz-justified-bottom {
+	@include flexItemsJustifiedOnBottom; 
+}
+.flex-horiz-justified-stretched {
+	@include flexItemsHorizJustifiedVertiStretched; 
+}
+
+// classes for horizontally distributed
+.flex-horiz-distributed-top {
+	@include flexItemsDistributedOnTop; 
+}
+.flex-horiz-distributed-middle {
+	@include flexItemsDistributedOnMiddle; 
+}
+.flex-horiz-distributed-bottom {
+	@include flexItemsDistributedOnBottom; 
+}
+.flex-horiz-distributed-stretched {
+	@include flexItemsHorizDistributedVertiStretched; 
+}
+
+// classes for horizontally centered
+.flex-horiz-centered-top {
+	@include flexItemsHorizontalCenteredOnTop; 
+}
+.flex-horiz-centered-middle {
+	@include flexItemsHorizontalCenteredOnMiddle; 
+}
+.flex-horiz-centered-bottom {
+	@include flexItemsHorizontalCenteredOnBottom; 
+}
+.flex-horiz-centered-stretched {
+	@include flexItemsHorizCenteredVertiStretched; 
+}
+
+// classes for horizontally pushed to end flex behaviour
+.flex-horiz-end-top {
+	@include flexItemsHorizontalEndOnTop; 
+}
+.flex-horiz-end-middle {
+	@include flexItemsHorizontalEndOnMiddle; 
+}
+.flex-horiz-end-bottom {
+	@include flexItemsHorizontalEndOnBottom; 
+}

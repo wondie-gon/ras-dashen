@@ -1,0 +1,87 @@
+/*----------Header styles------------*/
+.ui-main-header {
+	position: relative;
+	height: auto;
+	z-index: 1500;
+	& .navbar {
+		&.ui-main-navbar {
+			background-color: $siteNavbarBg;
+		    -webkit-transform-origin: top center;
+			-moz-transform-origin: top center;
+			-ms-transform-origin: top center;
+			-o-transform-origin: top center;
+			transform-origin: top center;
+			&.navFixed, 
+			&.toggled {
+				position: fixed;
+				@include runAnimation(navFadesInDown,1.5s,linear,0.25s);
+			}
+		}
+	}
+	&.home-hdr {
+		& .navbar {
+			&.ui-main-navbar {
+				position: fixed;
+				left: 0;
+    			top: 0;
+				background-color: $siteNavbarBg;
+			}
+		}
+	}
+}
+
+// fade in animation
+@-webkit-keyframes navFadesInDown {
+	0% {
+		@include transform(scale(1,0));
+		opacity: 0;
+	}
+	100% {
+		@include transform(scale(1));
+		opacity: 1;
+	}
+}
+@keyframes navFadesInDown {
+	0% {
+		@include transform(scale(1,0));
+		opacity: 0;
+	}
+	100% {
+		@include transform(scale(1));
+		opacity: 1;
+	}
+}
+
+@media (min-width: 576px) {
+	.ui-main-header {
+		& .navbar {
+			&.ui-main-navbar {
+				background-color: $siteNavbarBg;
+			}
+		}
+		&.home-hdr {
+			& .navbar {
+				&.ui-main-navbar {
+					background-color: $siteNavbarBg;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.ui-main-header {
+		& .navbar {
+			&.ui-main-navbar {
+				background-color: $siteNavbarBg;
+			}
+		}
+		&.home-hdr {
+			& .navbar {
+				&.ui-main-navbar {
+					background-color: $siteNavbarBg;
+				}
+			}
+		}
+	}
+}

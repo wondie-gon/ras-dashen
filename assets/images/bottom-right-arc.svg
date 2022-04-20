@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="1660" height="500" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ 	<g>
+	  <path stroke="#83c8e7" fill="#83c8e7" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" d="m370.22222,495.99999c0,0 568.87735,-44.18014 849.96969,-152.62231c281.09233,-108.44217 435.02384,-282.48514 433.9084,-283.37767c-1.11545,-0.89253 2.78862,431.9836 2.78862,431.9836c0,0 -1286.66671,4.01638 -1286.66671,4.01638z" id="arc_bottom_right"/>
+	  <path stroke="#41b2e2" id="arc_bottom_right2" d="m544.88888,496c0,0 525.42722,-38.66666 723.76729,-93.33333c198.34009,-54.66667 387.98104,-141.33333 386.82115,-142.22222c-1.15988,-0.88889 1.15988,235.55555 0,234.66666c-1.15988,-0.88889 -1110.58845,0.88889 -1110.58845,0.88889z" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" fill="#41b2e2"/>
+ 	</g>
+</svg>

@@ -1,0 +1,302 @@
+// mixins for frontpage sections
+
+@mixin frontSectionPrimaryLightBg {
+	@include pageSectionBgAndTxtColor($siteDefaultLightBg, $siteDefaultLightBgTxt);
+}
+@mixin frontSectionSecondaryLightBg {
+	@include pageSectionBgAndTxtColor($blockElmsPrimaryLightBg, $blockElmsPrimaryLightBgTxt);
+}
+
+@mixin frontTextOnPrimaryLightBg {
+	@include pageSectionTextColor($siteDefaultLightBgTxt);
+}
+@mixin frontTextOnSecondaryLightBg {
+	@include pageSectionTextColor($blockElmsPrimaryLightBgTxt);
+}
+
+// page sections hr dividers
+@mixin frontSectionHrDividerStyle {
+	hr {
+		&.section-divider,
+		&.in-section-divider {
+			@include pageSectionHrDivider(3rem, 3rem, transparent, 0, 0, 0);
+		}
+	}
+}
+
+
+// front sections title
+@mixin frontSectionTitle {
+	.section-title {
+		@include pageSectionsTitleStyle(1rem 0, 250%, 600, 1.5, capitalize);
+	}
+}
+// front sections description
+@mixin frontSectionDescription {
+	.section-description {
+		@include pageSectionsDescriptionStyle(150%, 500, 1.5);
+	}
+}
+
+// front excerpt blocks
+@mixin frontExcerptBlock {
+	.excerpt-block {
+		@include excerptBlockStyle(100%, 300, 1.5);
+	}
+}
+
+// front excerpt blocks title
+@mixin frontExcerptBlockTitle {
+	.block-title {
+		@include excerptBlockTitleStyle(150%, 500, 1.5, 1.5rem);
+	}
+}
+
+// hero section styles
+@mixin frontHeroSectionStyles {
+	.hero-section {
+		padding-top: 2.5rem;
+		@include pageSectionBgAndTxtColor($siteNavbarBg, $siteNavbarBgTextClr);
+		& .section-divider-svg {
+			fill: $siteDefaultLightBg;
+			stroke:none;
+			stroke-width:0;
+		}
+		& .section-title {
+			@include pageSectionTextColor($siteNavbarBgTextClr);
+		}
+		& .excerpt-block {
+			& p {
+				@include excerptBlockTextColor($siteNavbarBgTextClr);
+			}
+		}
+		& .hero-img {
+			display: block;
+			@include imgBorderRadius($boxRadDefault);
+			@include bottomRightLeftLiftedUpShadeEffect(80%, 80%, 2.5rem, 1rem, 2rem, $lessLightBg, 10deg);
+		}
+		& .block-title {
+			@include excerptBlockTextColor($siteNavbarBgTextClr);
+		}
+	}
+}
+
+// about_site section styles
+@mixin frontAboutSiteSectionStyles {
+	.about-site-section {
+		@include frontSectionPrimaryLightBg;
+		& .section-inner {}
+		& .content-wrap-row {}
+		& .about-site-col {
+			text-align: center;
+			margin-bottom: 1.5rem;
+		}
+	  	& .excerpt-block {
+	  		@include excerptBlockBgAndColor($excerptBlockSecondaryDarkBg, $excerptBlockSecondaryDarkBgTxt);
+			@include excerptBoxBorderStyle($brdrThickness, $excerptBlockSecondaryDarkBg, $defaultCardRad);
+			@include excerptCardBoxShadow($boxShadowBeforeHvr);
+			& p {
+				@include excerptBlockTextColor($excerptBlockSecondaryDarkBgTxt);
+			}
+	  	}
+	  	& .irregular-border-rad {
+		  @include eightValuesSlashedBorderRadius(30%, 70%, 30%, 70%);
+		}
+		& .block-title {
+			& a {
+			  	@include excerptBlockLinkStyle($siteDefaultLightBgLink, $siteDefaultLightBgLinkHvr);
+			}
+		}
+	}
+}
+
+// latest_picks section styles
+@mixin frontLatestPicksSectionStyles {
+	.latest-picks-section {
+		@include frontSectionSecondaryLightBg;
+		& .section-inner {}
+		& .section-title {
+	  		@include frontTextOnSecondaryLightBg;
+		}
+		& .latest-picks {
+			padding-bottom: 3rem;
+			overflow: hidden;
+			@include excerptBlockBgAndColor($siteDefaultLightBg, $siteDefaultLightBgTxt);
+		}
+		& .latest-picks-image {
+			@include imgBorderRadius($boxRadDefault);
+			@include imageFancyShadow($rootDark);
+		}
+		& .excerpt-block {
+		  & p {
+			    @include excerptBlockTextColor($siteDefaultLightBgTxt);
+			}
+		}
+		& .block-title {
+			& a {
+		  		@include excerptBlockLinkStyle($siteDefaultLightBgLink, $siteDefaultLightBgLinkHvr);
+			}
+		}
+	}
+}
+
+// primary services section and cards styles
+@mixin primary_services_section_styles {
+	.primary-services-section {
+		@include pageSectionBgAndTxtColor($graphicalObjLightClr1, $blockElmsSecondaryLightBgTxt);
+		padding-bottom: 2rem;
+		& .section-divider-svg {
+			fill: $siteDefaultLightBg;
+			stroke:none;
+			stroke-width:0;
+		}
+		& .section-title {
+			@include pageSectionTextColor($blockElmsSecondaryLightBgTxt);
+		}
+		& .section-description {
+		  	@include pageSectionTextColor($blockElmsSecondaryLightBgTxt);
+		}
+		& .primary-service-col {
+			@include excerptBlocksPaddingAndMargins(1rem, 1rem, 1.5rem);
+		}
+		& .card {
+			&.service-card {
+				@include excerptCardBgAndColor($excerptBlockSecondaryLightBg, $excerptBlockSecondaryLightBgTxt);
+				@include excerptCardBoxShadow($boxShadowBeforeHvr);
+			}
+		}
+		& .card-title {
+			@include excerptCardTitleColor($excerptBlockSecondaryLightBgLink);
+		} 
+		& .card-title a {
+			@include cardLinkStyle($excerptBlockSecondaryLightBgLink, $excerptBlockSecondaryLightBgLinkHvr);
+		}
+		& .card-text {
+			@include excerptCardTextColor($excerptBlockSecondaryLightBgTxt);
+		}
+	}
+}
+
+// featured products section and cards styles
+@mixin featured_products_section_styles {
+	.featured-products-section {
+		@include pageSectionBgAndTxtColor($siteDefaultLightBg, $siteDefaultLightBgTxt);
+		& .section-title {
+			@include pageSectionTextColor($siteDefaultLightBgTxt);
+		}
+		& .section-description {
+		  	@include pageSectionTextColor($siteDefaultLightBgTxt);
+		}
+		& .product-col {
+			@include excerptBlocksPaddingAndMargins(1rem, 1rem, 1.5rem);
+		}
+		& .card {
+			&.product-card {
+				@include excerptCardBgAndColor($siteDefaultDarkBg, $siteDefaultDarkBgTxt);
+				@include boxShadowFourSides( $boxShadowBeforeHvr );
+				height: 100%;
+			}
+		}
+		& .card-img-overlay {
+			background-color: $semiTransparentShadow;
+			@include generalSingleAttributeTransition( background-color, 0.3s, ease-in-out );
+			&:hover {
+				background-color: $transparentShadow;
+			}
+		}
+		& .card-img {
+			@include excerptCardCoverImgBorderRad($defaultCardRad);
+			&.img-fit-box {
+			  @include imgFittedToBox(100%);
+			  @include boxShadowFourSides( $boxShadowBeforeHvr );
+			}
+		}
+		& .card-title {
+			@include excerptCardTitleFontStyle(225%, 600);
+			@include excerptCardTitleColor($siteDefaultDarkBgLink);
+			& a {
+				@include cardLinkStyle($siteDefaultDarkBgLink, $siteDefaultDarkBgLinkHvr);
+			}
+		}
+		& .interactive-elems {
+			position: absolute;
+			bottom: 0;
+			right: auto;
+			left: auto;
+			margin-bottom: 1.5rem;
+		}
+		& .light-outline-btn {
+		  	@include btnBorderRounded( $btnBrdrThickness, $btnLightOutlineClr, $btnRadiusDef );
+		  	@include buttonLightOutline;
+		}
+	}
+}
+
+// secondary services section and cards styles
+@mixin secondary_services_section_styles {
+	.secondary-services-section {
+		@include frontSectionPrimaryLightBg;
+		& .section-title {
+			@include frontTextOnPrimaryLightBg;
+		}
+		& .section-description {
+		  	@include frontTextOnPrimaryLightBg;
+		}
+		& .secondary-service-col {
+			@include excerptBlocksPaddingAndMargins(1rem, 1rem, 1.5rem);
+		}
+		& .card {
+			&.service-card {
+				@include excerptCardBgAndColor($excerptBlockPrimaryLightBg, $excerptBlockPrimaryLightBgTxt);
+				@include excerptBlockShadow($boxShadowBeforeHvr);
+			}
+		}
+		& .card-title {
+			@include excerptCardTitleColor($excerptBlockPrimaryLightBgLink);
+		} 
+		& .card-title a {
+			@include cardLinkStyle($excerptBlockPrimaryLightBgLink, $excerptBlockPrimaryLightBgLinkHvr);
+		}
+		& .card-text {
+			@include excerptCardTextColor($excerptBlockPrimaryLightBgTxt);
+		}
+	}
+}
+
+// featured resources section and cards styles
+@mixin featured_resources_section_styles {
+	.featured-resources-section {
+		@include pageSectionBgAndTxtColor($blockElmsSecondaryLightBg, $blockElmsSecondaryLightBgTxt);
+		& .section-title {
+			@include pageSectionTextColor($blockElmsSecondaryLightBgTxt);
+		}
+		& .section-description {
+		  	@include pageSectionTextColor($blockElmsSecondaryLightBgTxt);
+		}
+		& .resource-col {
+			@include excerptBlocksPaddingAndMargins(1rem, 1rem, 1.5rem);
+		}
+		& .card {
+			&.resource-card {
+				@include excerptCardBgAndColor($excerptBlockPrimaryLightBg, $excerptBlockPrimaryLightBgTxt);
+				@include boxShadowFourSides( $boxShadowBeforeHvr );
+			}
+		}
+		& .card-title {
+			@include excerptCardTitleColor($excerptBlockPrimaryLightBgLink);
+			& a {
+				@include cardLinkStyle($excerptBlockPrimaryLightBgLink, $excerptBlockPrimaryLightBgLinkHvr);
+			}
+		}
+		& .card-img-bottom {
+			width: 100%;
+			@include excerptCardBottomImgBorderRad($defaultCardRad);
+			@include boxShadowFourSides( $boxShadowBeforeHvr );
+		}
+		& .btn-main-dark {
+		  	@include buttonPrimaryDarkBg;
+		}
+	}
+}
+
+
