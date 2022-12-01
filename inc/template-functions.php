@@ -186,13 +186,17 @@ function ras_dashen_add_page_excerpt() {
 add_action( 'init', 'ras_dashen_add_page_excerpt' );
 
 /**
- * Add Open Graph Meta Tags
+ * Custom action hook to add Open Graph Meta Tags
  */
+add_action( 'wp_head', 'ras_dashen_meta_og', 5 );
 
-function ras_dashen_meta_og() {
-    global $post;
+if ( ! function_exists( 'ras_dashen_meta_og' ) ) {
+	function ras_dashen_meta_og() {
+		if ( ! is_single() ) {
+	    	return;
+	    }
 
-    if ( is_single() ) {
+	    global $post;
 
     	// url of 1 attachment such as image
         $atchmnt_url = ras_dashen_get_attachment_url( 1 ); 
@@ -217,45 +221,52 @@ function ras_dashen_meta_og() {
 
         // translate ready site name
         $site_name_ready = sprintf( esc_html__( '%s', 'ras-dashen' ), get_bloginfo( 'name' ) );
-        ?>
-<meta name="author" content="<?php esc_html( get_the_author() ); ?>">
-<meta name="description" content="<?php echo $excerpt_ready; ?>">
-<meta property="og:title" content="<?php echo $title_ready; ?>">
-<meta property="og:description" content="<?php echo $excerpt_ready; ?>">
-<meta property="og:type" content="article">
-<meta property="og:url" content="<?php echo get_permalink(); ?>">
-<meta property="og:site_name" content="<?php echo $site_name_ready; ?>">
-<meta property="og:image" content="<?php echo esc_url( $atchmnt_url ); ?>">
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:description" content="<?php echo $excerpt_ready; ?>" />
-<meta name="twitter:title" content="<?php echo $title_ready; ?>" />
-<meta name="twitter:site" content="<?php echo $site_name_ready; ?>" />
-<meta name="twitter:image" content="<?php echo esc_url( $atchmnt_url ); ?>" />
-<?php
-    } else {
-        return;
-    }
+    ?>
+	<meta name="author" content="<?php esc_html( get_the_author() ); ?>">
+	<meta name="description" content="<?php echo $excerpt_ready; ?>">
+	<meta property="og:title" content="<?php echo $title_ready; ?>">
+	<meta property="og:description" content="<?php echo $excerpt_ready; ?>">
+	<meta property="og:type" content="article">
+	<meta property="og:url" content="<?php echo get_permalink(); ?>">
+	<meta property="og:site_name" content="<?php echo $site_name_ready; ?>">
+	<?php if ( ! empty( $atchmnt_url ) ) : ?>
+	<meta property="og:image" content="<?php echo esc_url( $atchmnt_url ); ?>">
+	<?php endif; ?>
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:description" content="<?php echo $excerpt_ready; ?>" />
+	<meta name="twitter:title" content="<?php echo $title_ready; ?>" />
+	<meta name="twitter:site" content="<?php echo $site_name_ready; ?>" />
+	<?php if ( ! empty( $atchmnt_url ) ) : ?>
+	<meta name="twitter:image" content="<?php echo esc_url( $atchmnt_url ); ?>" />
+	<?php endif; ?>
+	<?php
+	}
 }
-add_action( 'wp_head', 'ras_dashen_meta_og', 5 );
 
 /**
-* Exclude some custom post types from search
+* Filter hook for excluding custom post types from search
 */
-
-function ras_dashen_exclude_custom_post_from_search( $query ) {
-	if ( $query->is_search ) {
-
-	    $query->set( 'post_type', 'post' );
-
-	}
-    return $query;
-}
 add_filter( 'pre_get_posts','ras_dashen_exclude_custom_post_from_search' );
+if ( ! function_exists( 'ras_dashen_exclude_custom_post_from_search' ) ) {
+	/**
+	* Exclude some custom post types from search
+	*/
+	function ras_dashen_exclude_custom_post_from_search( $query ) {
+		if ( $query->is_search ) {
+
+		    $query->set( 'post_type', 'post' );
+
+		}
+	    return $query;
+	}
+}
 
 /**
 * To get rid of the “Category:”, “Tag:”, “Author:”, “Archives:” 
 * and “Other taxonomy name:” in the archive title
 */
+add_filter( 'get_the_archive_title', 'ras_dashen_modified_archive_title' );
+
 if ( ! function_exists( 'ras_dashen_modified_archive_title' ) ) {
 	function ras_dashen_modified_archive_title( $title ) {
 	    if ( is_category() ) {
@@ -273,7 +284,6 @@ if ( ! function_exists( 'ras_dashen_modified_archive_title' ) ) {
 	    return $title;
 	}
 }
-add_filter( 'get_the_archive_title', 'ras_dashen_modified_archive_title' );
 
 /**
  * Sanitize custom meta box checkbox.
