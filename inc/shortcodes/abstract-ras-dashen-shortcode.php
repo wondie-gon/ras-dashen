@@ -69,47 +69,4 @@ abstract class Ras_Dashen_Shortcode
         return $col_class;
     }
 
-    // get sanitized bootstrap grid classes
-    public function sanitized_bs_grid_class( $classes, $fallback_cls = 'my-5 col-sm-6 col-md-4' ) {
-
-        // bootstrap grid classes array
-        $bs_classes = array(
-            'default_col'   =>    'col-12',
-            'col_sm'        =>    'col-sm-6',
-            'col_md'        =>    'col-md-4',
-            'col_lg'        =>    'col-lg-3',
-            'padding'       =>    'py-2',
-            'margin'        =>    '',
-            'addional_cls'  =>    '',
-        );
-
-        $bs_classes = array_merge( $bs_classes, (array) $classes );
-
-        // joing classes array to string
-        $class_names = implode( ' ', $bs_classes );
-
-        
-        // Strip out any %-encoded octets.
-        $sanitized_cls = preg_replace( '|%[a-fA-F0-9][a-fA-F0-9]|', '', $class_names );
-     
-        // Limit to A-Z, a-z, 0-9, '_', '-'.
-        $sanitized_cls = preg_replace( '/[^A-Za-z0-9_-]/', '', $sanitized_cls );
-
-        if ( '' === $sanitized_cls && $fallback_cls ) {
-            return sanitize_html_class( $fallback_cls );
-        }
-
-        /**
-         * Filters a sanitized HTML class string.
-         *
-         * @since 2.8.0
-         *
-         * @param string $sanitized_cls The sanitized HTML class.
-         * @param array $classes     HTML classes before sanitization.
-         * @param string $fallback_cls  The fallback string.
-         */
-        // return apply_filters( 'bs_grid_class', $sanitized_cls, $classes, $fallback_cls );
-        return $sanitized_cls;
-    }
-
 } // class end

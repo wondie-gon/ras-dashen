@@ -39,7 +39,7 @@ if ( ! function_exists( 'ras_dashen_sanitize_html' ) ) {
  * 
  * NOTE: wp_strip_all_tags() can be passed directly as 
  * $wp_customize->add_setting() 'sanitize_callback'. It 
- * is wrapped in a callback here merely for example 
+ * is wrapped in a callback here merely for 
  * purposes.
  * 
  * @uses	wp_strip_all_tags()	https://developer.wordpress.org/reference/functions/wp_strip_all_tags/
@@ -51,7 +51,7 @@ if ( ! function_exists( 'ras_dashen_sanitize_css' ) ) {
 }
 
 /**
- * HEX Color sanitization callback example.
+ * HEX Color sanitization callback.
  *
  * - Sanitization: hex_color
  * - Control: text, WP_Customize_Color_Control
@@ -180,7 +180,7 @@ if ( ! function_exists( 'ras_dashen_sanitize_checkbox' ) ) :
 endif;
 
 /**
- * Drop-down Pages sanitization callback example.
+ * Drop-down Pages sanitization callback.
  *
  * - Sanitization: dropdown-pages
  * - Control: dropdown-pages
